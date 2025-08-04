@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+        <a href="index.html" class="logo">Shubhangi<span>Collection</span></a>
+          <div class="nav-menu1">
+      <div id="toggle-Link" class="toggle-Link" onclick="togglelink()">☰</div>
+<nav id="nav-menu" class="nav-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="booking.html">Beauty Parlour</a></li>
+    <li><a href="order.html">Orders</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</div>
+        
+        <div class="header-right">
+        
+            <div class="nav-icons">
+                <a href="cart.html" class="icon cart-icon"><i class="fas fa-shopping-bag"></i></a>
+                <a href="signup.html" class="icon user-icon"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container login-page">
+            <div class="login-form-container">
+                <h1 class="section-title">Login</h1> 
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                      <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" autocomplete="current-password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                    <div class="login-options">
+                        <a href="#">Forgot Password?</a>
+                        <a href="signup.html">Create an Account</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    function togglelink() {
+      const nav = document.getElementById("nav-menu");
+      const toggleBtn = document.getElementById("toggle-Link");
+
+      nav.classList.toggle("show1");
+      document.body.classList.toggle("no-scroll");
+      toggleBtn.classList.toggle("active");
+
+      if (toggleBtn.classList.contains("active")) {
+        toggleBtn.innerHTML = "✖"; // Cross icon
+      } else {
+        toggleBtn.innerHTML = "☰"; // Menu icon
+      }
+    }
+
+    
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    // For demonstration only: check dummy values
+    if (email === "test@example.com" && password === "password123") {
+      alert("Login successful!");
+      window.location.href = "index.html"; // redirect to home or dashboard
+    } else {
+      alert("Invalid email or password.");
+    }
+  });
+  </script>
+</body>
+</html>
