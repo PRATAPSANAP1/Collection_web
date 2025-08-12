@@ -1,0 +1,212 @@
+<!-- START: HTML Document -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration - Shubhangi Collection</title>
+    <!-- START: External Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- END: External Fonts and Icons -->
+    <!-- START: External CSS -->
+    <link rel="stylesheet" href="register.css">
+    <!-- END: External CSS -->
+</head>
+<body>
+    <!-- START: Header Section -->
+    <header class="header">
+        <a href="index.html" class="logo">Shubhangi<span>Collection</span></a>
+        
+        <div class="nav-menu1">
+            <div id="toggle-Link" class="toggle-Link" onclick="togglelink()">☰</div>
+            <nav id="nav-menu" class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="booking.html">Beauty Parlour</a></li>
+                    <li><a href="order.html">Orders</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon wishlist-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="icon cart-icon"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+    </header>
+    <!-- END: Header Section -->
+
+    <!-- START: Main Content - Login/Registration Container -->
+    <main class="login-registration-wrapper">
+        <div class="auth-container" id="authContainer">
+            <!-- START: Registration Form -->
+            <div class="form-container sign-up-container">
+                <form id="registrationForm" action="/api/signup" method="POST">
+                    <h2>Registration</h2>
+                    <div class="input-group">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" placeholder="Username" id="regUsername" name="name" required />
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-envelope icon"></i>
+                        <input type="email" placeholder="Email" id="regEmail" name="email" required />
+                    </div>
+                   <div class="input-group">
+    <i class="fas fa-phone icon"></i>
+    <input type="tel" placeholder="Mobile Number" id="regMobile" name="mobile" pattern="[0-9]{10}" required />
+</div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" placeholder="Password" id="regPassword" name="password" required />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" placeholder="Confirm Password" id="regConfirmPassword" name="conPassword" required />
+                    </div>
+                    <button type="submit">Register</button>
+                    <p class="mobile-switch">
+                        Already have an account? <a href="#" id="mobileSignIn">Login</a>
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </form>
+            </div>
+            <!-- END: Registration Form -->
+
+            <!-- START: Login Form -->
+            <div class="form-container sign-in-container">
+                <form id="loginForm" action="#">
+                    <h2>Login</h2>
+                    <div class="input-group">
+                        <i class="fas fa-user icon"></i>
+                        <input type="email" placeholder="Email" id="loginEmail" required />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" placeholder="Password" id="loginPassword" required />
+                    </div>
+                    <a href="#">Forgot your password?</a>
+                    <button type="submit">Login</button>
+                    <p class="mobile-switch">
+                        Don't have an account? <a href="#" id="mobileSignUp">Register</a>
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </form>
+            </div>
+            <!-- END: Login Form -->
+
+            <!-- START: Sliding Overlay Panel -->
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h2>Welcome Back!</h2>
+                        <p>Already have an account?</p>
+                        <button class="ghost" id="signIn">Login</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h2>Hello, Welcome!</h2>
+                        <p>Don't have an account?</p>
+                        <button class="ghost" id="signUp">Register</button>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Sliding Overlay Panel -->
+        </div>
+    </main>
+    <!-- END: Main Content - Login/Registration Container -->
+<script>
+    // ===== Navigation Toggle =====
+    const nav = document.getElementById("nav-menu");
+    const toggleBtn = document.getElementById("toggle-Link");
+
+    function togglelink() {
+        nav.classList.toggle("show1");
+        document.body.classList.toggle("no-scroll");
+        toggleBtn.classList.toggle("active");
+
+        // Toggle icon text
+        toggleBtn.innerHTML = toggleBtn.classList.contains("active") ? "✖" : "☰";
+        
+        // Accessibility toggle
+        toggleBtn.setAttribute("aria-expanded", toggleBtn.classList.contains("active"));
+    }
+
+    toggleBtn.setAttribute("role", "button");
+    toggleBtn.setAttribute("aria-controls", "nav-menu");
+    toggleBtn.setAttribute("aria-expanded", "false");
+
+    // ===== Auth Form Toggle =====
+    const authContainer = document.getElementById('authContainer');
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const mobileSignUp = document.getElementById('mobileSignUp');
+    const mobileSignIn = document.getElementById('mobileSignIn');
+
+    function showSignUpMobile(e) {
+        e.preventDefault();
+        authContainer.classList.add('show-signup');
+    }
+
+    function showSignInMobile(e) {
+        e.preventDefault();
+        authContainer.classList.remove('show-signup');
+    }
+
+    function showSignUpDesktop() {
+        authContainer.classList.add('right-panel-active');
+    }
+
+    function showSignInDesktop() {
+        authContainer.classList.remove('right-panel-active');
+    }
+
+    function applyToggleListeners() {
+        // Remove all previous listeners first
+        signUpButton.removeEventListener('click', showSignUpMobile);
+        signInButton.removeEventListener('click', showSignInMobile);
+        mobileSignUp.removeEventListener('click', showSignUpMobile);
+        mobileSignIn.removeEventListener('click', showSignInMobile);
+        
+        signUpButton.removeEventListener('click', showSignUpDesktop);
+        signInButton.removeEventListener('click', showSignInDesktop);
+
+        if (window.innerWidth <= 768) {
+            // Mobile listeners
+            signUpButton.addEventListener('click', showSignUpMobile);
+            signInButton.addEventListener('click', showSignInMobile);
+            mobileSignUp.addEventListener('click', showSignUpMobile);
+            mobileSignIn.addEventListener('click', showSignInMobile);
+        } else {
+            // Desktop listeners
+            signUpButton.addEventListener('click', showSignUpDesktop);
+            signInButton.addEventListener('click', showSignInDesktop);
+        }
+    }
+
+    // Initial setup
+    applyToggleListeners();
+
+    // Re-apply listeners when screen size changes
+    window.addEventListener('resize', applyToggleListeners);
+</script>
+
+</body>
+</html>
+<!-- END: HTML Document -->

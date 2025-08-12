@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - Shubhangi Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="wishlist.css">
+</head>
+<body>
+    <div id="mainOverlay" class="overlay"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo">Shubhangi<span>Collection</span></a>
+        
+        <div class="header-center">
+            <div id="toggle-Link" class="toggle-Link" onclick="togglelink()">&#9776;</div>
+            <nav id="nav-menu" class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="booking.html">Beauty Parlour</a></li>
+                    <li><a href="order.html">Orders</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+            <div class="nav-icons">
+       <a href="wishlist.html" class="icon wishlist-icon"><i class="fas fa-heart"></i></a>
+         <a href="cart.html" class="icon cart-icon"><i class="fas fa-shopping-bag"></i></a>
+         <a href="delivery.html" class="icon cart-icon"><i class="fas fa-truck"></i></a>
+                <a href="profile.html" class="icon user-icon"><i class="fas fa-user"></i></a>
+      </div>
+        </div>
+    </header>
+
+    <main class="container wishlist-container">
+        <h2 class="section-title" id="section-title">My Wishlist</h2>
+        <div id="wishlist-products-grid" class="product-grid">
+            <p id="no-wishlist-items" style="text-align: center; color: #555; font-size: 1.1rem; display: none;">Your wishlist is empty. Start adding some lovely items!</p>
+            
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/300/FF6F61/FFFFFF?text=Product+1" alt="Product Image">
+                    <div class="remove-from-wishlist"><i class="fas fa-times"></i></div>
+                </div>
+                <h4>Diamond Studs</h4>
+                <p class="price">₹4,500</p>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/300/E0E5C1/2E2E2E?text=Product+2" alt="Product Image">
+                    <div class="remove-from-wishlist"><i class="fas fa-times"></i></div>
+                </div>
+                <h4>Silver Anklet</h4>
+                <p class="price">₹1,200</p>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+            
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/300/FF5722/FFFFFF?text=Product+3" alt="Product Image">
+                    <div class="remove-from-wishlist"><i class="fas fa-times"></i></div>
+                </div>
+                <h4>Antique Necklace</h4>
+                <p class="price">₹7,800</p>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function togglelink() {
+            const nav = document.getElementById("nav-menu");
+            const overlay = document.getElementById('mainOverlay');
+            const toggleBtn = document.getElementById("toggle-Link");
+
+            nav.classList.toggle("show1");
+            overlay.classList.toggle("active");
+            document.body.classList.toggle("no-scroll");
+
+            if (toggleBtn) {
+                toggleBtn.classList.toggle("active");
+
+                if (toggleBtn.classList.contains("active")) {
+                    toggleBtn.innerHTML = "&#10005;"; // ✕
+                } else {
+                    toggleBtn.innerHTML = "&#9776;"; // ☰
+                }
+            }
+        }
+    </script>
+</body>
+</html>

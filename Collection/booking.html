@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment | Shubhangi Beauty Parlour</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">Shubhangi<span>Collection</span></a>
+   <div class="nav-menu1">
+      <div id="toggle-Link" class="toggle-Link" onclick="togglelink()">☰</div>
+<nav id="nav-menu" class="nav-menu">
+   <!-- This will become ✖ -->
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="booking.html">Beauty Parlour</a></li>
+    <li><a href="order.html">Orders</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</div>
+    <div class="nav-icons">
+       <a href="wishlist.html" class="icon wishlist-icon"><i class="fas fa-heart"></i></a>
+         <a href="cart.html" class="icon cart-icon"><i class="fas fa-shopping-bag"></i></a>
+         <a href="delivery.html" class="icon cart-icon"><i class="fas fa-truck"></i></a>
+                <a href="profile.html" class="icon user-icon"><i class="fas fa-user"></i></a>
+      </div>
+  </header>
+
+  <main class="booking-page">
+    <h2 class="section-title">Book Your Beauty Appointment</h2>
+    <section class="booking-form-section">
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Contact Number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label>Select Services</label>
+          <div class="service-selection">
+            <label><input type="checkbox" name="service" value="facial"> Facial</label>
+            <label><input type="checkbox" name="service" value="waxing"> Waxing</label>
+            <label><input type="checkbox" name="service" value="manicure"> Manicure & Pedicure</label>
+            <label><input type="checkbox" name="service" value="hair-spa"> Hair Spa</label>
+            <label><input type="checkbox" name="service" value="threading"> Threading</label>
+            <label><input type="checkbox" name="service" value="other"> Other</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Preferred Time</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit Booking</button>
+      </form>
+    </section>
+  </main>
+
+ <script>
+    // START: togglelink Function
+    function togglelink() {
+        const nav = document.getElementById("nav-menu");
+        const toggleBtn = document.getElementById("toggle-Link");
+
+        nav.classList.toggle("show1");
+        document.body.classList.toggle("no-scroll");
+
+        if (toggleBtn) {
+            toggleBtn.classList.toggle("active");
+
+            if (toggleBtn.classList.contains("active")) {
+                toggleBtn.innerHTML = "&#10005;"; // ✕
+            } else {
+                toggleBtn.innerHTML = "&#9776;"; // ☰
+            }
+        }
+    }
+    // END: togglelink Function
+
+    // START: Booking Form Submission
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from refreshing the page
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const notes = document.getElementById('notes').value;
+        const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
+                             .map(checkbox => checkbox.value);
+
+        // Create an appointment object
+        const newAppointment = {
+            id: new Date().getTime(), // Unique ID for each appointment
+            name: name,
+            phone: phone,
+            services: services,
+            date: date,
+            time: time,
+            notes: notes,
+            status: 'pending' // Default status
+        };
+
+        // Get existing appointments from localStorage, or initialize an empty array
+        const existingAppointments = JSON.parse(localStorage.getItem('appointments')) || [];
+
+        // Add the new appointment to the array
+        existingAppointments.push(newAppointment);
+
+        // Save the updated array back to localStorage
+        localStorage.setItem('appointments', JSON.stringify(existingAppointments));
+
+        alert('Your appointment has been successfully booked!');
+        event.target.reset(); // Reset the form fields
+    });
+    // END: Booking Form Submission
+</script>
+</body>
+</html>

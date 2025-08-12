@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Shubhangi Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            Shubhangi<span>Collection</span>
+        </a>
+        <div class="nav-menu1">
+            <div id="toggle-Link" class="toggle-Link">☰</div>
+            <nav id="nav-menu" class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="booking.html">Beauty Parlour</a></li>
+                    <li><a href="order.html">Orders</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <div class="nav-icons">
+                
+                <a href="cart.html" class="icon cart-icon"><i class="fas fa-shopping-bag"></i></a>
+                <a href="wishlist.html" class="icon wishlist-icon"><i class="fas fa-heart"></i></a>
+                 <a href="delivery.html" class="icon cart-icon"><i class="fas fa-truck"></i></a>
+            </div>
+        </div>
+    </header>
+    <div class="overlay main-overlay" id="mainOverlay"></div>
+
+    <main class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <img src="https://placehold.co/120x120/FF5722/FFFFFF?text=PS" alt="User Avatar" class="profile-avatar">
+                <div class="profile-info">
+                    <h1>Pratap Sanap</h1>
+                    <p>pratapsanap01@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="profile-section profile-details">
+                <h2>Personal Details</h2>
+                <p><strong>Name:</strong> Pratap Sanap</p>
+                <p><strong>Email:</strong> pratapsanap01@gmail.com</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Address:</strong>Kopargaon 423601</p>
+                <div class="profile-actions">
+                    <button class="btn btn-primary">Edit Profile</button>
+                    <button class="btn btn-secondary">Change Password</button>
+                </div>
+            </div>
+
+            <div class="profile-section order-history">
+                <h2>Order History</h2>
+                <div class="order-cards-container">
+                    <div class="order-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/150/FF6F61/FFFFFF?text=Product+1" alt="Product 1 Image">
+                        </div>
+                        <div class="product-details">
+                            <h4 class="product-name">Cotton Saree</h4>
+                            <div class="card-header">
+                                <span class="order-id">Order ID: #ORD789</span>
+                                <span class="order-date">Date: 20:07:2025</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="order-info">
+                                    <p><strong>Total:</strong> <span class="order-total">₹120.50</span></p>
+                                    <p><strong>Status:</strong> <span class="order-status-badge completed">Completed</span></p>
+                                </div>
+                                <div class="order-actions">
+                                    <button class="btn btn-secondary btn-sm">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="order-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/150/E0E5C1/2E2E2E?text=Product+2" alt="Product 2 Image">
+                        </div>
+                        <div class="product-details">
+                            <h4 class="product-name">Silk Lehenga</h4>
+                            <div class="card-header">
+                                <span class="order-id">Order ID: #ORD788</span>
+                                <span class="order-date">Date: 15:07:2025</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="order-info">
+                                    <p><strong>Total:</strong> <span class="order-total">₹45.00</span></p>
+                                    <p><strong>Status:</strong> <span class="order-status-badge shipped">Shipped</span></p>
+                                </div>
+                                <div class="order-actions">
+                                    <button class="btn btn-secondary btn-sm">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/150/F44336/FFFFFF?text=Product+3" alt="Product 3 Image">
+                        </div>
+                        <div class="product-details">
+                            <h4 class="product-name">Designer Gown</h4>
+                            <div class="card-header">
+                                <span class="order-id">Order ID: #ORD787</span>
+                                <span class="order-date">Date: 10:07:2025</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="order-info">
+                                    <p><strong>Total:</strong> <span class="order-total">₹75.99</span></p>
+                                    <p><strong>Status:</strong> <span class="order-status-badge pending">Pending</span></p>
+                                </div>
+                                <div class="order-actions">
+                                    <button class="btn btn-secondary btn-sm">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-section wishlist">
+                <h2>My Wishlist</h2>
+                <div class="wishlist-grid">
+                    <div class="wishlist-item-card">
+                        <img src="images/product-1.jpg" alt="Rose Gold Earrings">
+                        <h4>Rose Gold Studs</h4>
+                        <p>$45.00</p>
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="wishlist-item-card">
+                        <img src="images/anklets.jpg" alt="Pearl Anklet">
+                        <h4>Pearl Anklet</h4>
+                        <p>$30.00</p>
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="wishlist-item-card">
+                        <img src="images/jewelry-sets.jpg" alt="Jewelry Set">
+                        <h4>Diamond Set</h4>
+                        <p>$150.00</p>
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-section account-options">
+                <h2>Account Management</h2>
+                <ul>
+                    <li><a href="#"><i class="fas fa-credit-card"></i> Payment Methods</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Saved Addresses</a></li>
+                    <li><a href="#"><i class="fas fa-bell"></i> Notification Settings</a></li>
+                    <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById("toggle-Link");
+            const nav = document.getElementById("nav-menu");
+            const overlay = document.getElementById('mainOverlay');
+        
+            function togglelink() {
+                nav.classList.toggle("show1");
+                overlay.classList.toggle("active");
+                document.body.classList.toggle("no-scroll");
+        
+                if (toggleBtn.classList.contains("active")) {
+                    toggleBtn.innerHTML = "&#9776;"; // Hamburger
+                    toggleBtn.classList.remove("active");
+                } else {
+                    toggleBtn.innerHTML = "&#10005;"; // Cross
+                    toggleBtn.classList.add("active");
+                }
+            }
+        
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', togglelink);
+            }
+        
+            if (overlay) {
+                overlay.addEventListener('click', function() {
+                    if (nav.classList.contains('show1')) {
+                        togglelink();
+                    }
+                });
+            }
+            
+            // Placeholder for "Edit Profile" button click
+            document.querySelectorAll('.profile-actions .btn-primary').forEach(button => {
+                if (button.textContent.includes('Edit Profile')) {
+                    button.addEventListener('click', function() {
+                        console.log('Edit Profile button clicked!');
+                        alert('Edit Profile functionality coming soon!');
+                    });
+                }
+            });
+
+            // Placeholder for "Change Password" button click
+            document.querySelectorAll('.profile-actions .btn-secondary').forEach(button => {
+                if (button.textContent.includes('Change Password')) {
+                    button.addEventListener('click', function() {
+                        console.log('Change Password button clicked!');
+                        alert('Change Password functionality coming soon!');
+                    });
+                }
+            });
+
+            // Placeholder for "View Details" button in Order History
+            document.querySelectorAll('.order-history .order-card .btn-secondary').forEach(button => {
+                if (button.textContent.includes('View Details')) {
+                    button.addEventListener('click', function() {
+                        const orderId = this.closest('.order-card').querySelector('.order-id').textContent;
+                        console.log(`View Details clicked for ${orderId}`);
+                        alert(`Viewing details for ${orderId}`);
+                    });
+                }
+            });
+
+            // Placeholder for "Add to Cart" button in Wishlist
+            document.querySelectorAll('.wishlist-item-card .btn-primary').forEach(button => {
+                if (button.textContent.includes('Add to Cart')) {
+                    button.addEventListener('click', function() {
+                        const productName = this.closest('.wishlist-item-card').querySelector('h4').textContent;
+                        console.log(`Added "${productName}" from wishlist to cart!`);
+                        alert(`"${productName}" added to cart!`);
+                    });
+                }
+            });
+
+            // Placeholder for Account Management links
+            document.querySelectorAll('.account-options ul li a').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    if (this.getAttribute('href') === '#') { // Prevent default for placeholder links
+                        event.preventDefault();
+                        console.log(`Account option clicked: ${this.textContent.trim()}`);
+                        alert(`"${this.textContent.trim()}" functionality coming soon!`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

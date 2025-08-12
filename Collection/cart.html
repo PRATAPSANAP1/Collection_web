@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Shopping Cart - Collection</title>
+
+  <!-- Fonts and Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Your External CSS -->
+  <link rel="stylesheet" href="cart.css"/>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">Shubhangi<span>Collection</span></a>
+
+    <!-- Toggle Button for Mobile -->
+  
+
+    <!-- Navigation Menu -->
+     <!-- Toggle Button Inside nav-menu (on top) -->
+      <div class="nav-menu1">
+      <div id="toggle-Link" class="toggle-Link" onclick="togglelink()">☰</div>
+<nav id="nav-menu" class="nav-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="booking.html">Beauty Parlour</a></li>
+    <li><a href="order.html">Orders</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</div>
+
+
+    <!-- Right Side Icons -->
+    <div class="nav-icons">
+      <a href="wishlist.html" class="icon wishlist-icon"><i class="fas fa-heart"></i></a>
+      <a href="collection.html" class="icon cart-icon"><i class="fas fa-shopping-bag"></i></a>
+      <a href="delivery.html" class="icon cart-icon"><i class="fas fa-truck"></i></a>
+      <a href="profile.html" class="icon user-icon"><i class="fas fa-user"></i></a>
+      
+    </div>
+     
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="container cart-page">
+      <h2 class="section-title">Your Shopping Bag</h2>
+
+      <div class="cart-items">
+        <!-- Item 1 -->
+        <div class="cart-item">
+          <div class="cart-item-image">
+            <img src="images/product-1.jpg" alt="Dainty Rose Gold Studs">
+          </div>
+          <div class="cart-item-details">
+            <h4>Dainty Rose Gold Studs</h4>
+            <p><strong>Price:</strong> ₹45.00</p>
+            <div class="quantity-control">
+              <label for="qty-1">Quantity:</label>
+              <input type="number" id="qty-1" value="1" min="1" onchange="updateSubtotal()">
+            </div>
+            <button class="remove-item-btn">Remove</button>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="cart-item">
+          <div class="cart-item-image">
+            <img src="images/product-2.jpg" alt="Elegant Pearl Anklet">
+          </div>
+          <div class="cart-item-details">
+            <h4>Elegant Pearl Anklet</h4>
+            <p><strong>Price:</strong> ₹30.00</p>
+            <div class="quantity-control">
+              <label for="qty-2">Quantity:</label>
+              <input type="number" id="qty-2" value="1" min="1" onchange="updateSubtotal()">
+            </div>
+            <button class="remove-item-btn">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="cart-summary">
+        <div class="summary-item">
+          <span>Subtotal:</span>
+          <span class="subtotal-price" id="subtotal">₹75.00</span>
+        </div>
+        <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    function togglelink() {
+      const nav = document.getElementById("nav-menu");
+      const toggleBtn = document.getElementById("toggle-Link");
+
+      nav.classList.toggle("show1");
+      document.body.classList.toggle("no-scroll");
+      toggleBtn.classList.toggle("active");
+
+      if (toggleBtn.classList.contains("active")) {
+        toggleBtn.innerHTML = "✖"; // Cross icon
+      } else {
+        toggleBtn.innerHTML = "☰"; // Menu icon
+      }
+    }
+
+    function updateSubtotal() {
+      const qty1 = parseInt(document.getElementById("qty-1").value) || 0;
+      const qty2 = parseInt(document.getElementById("qty-2").value) || 0;
+
+      const price1 = 45.0;
+      const price2 = 30.0;
+
+      const total = qty1 * price1 + qty2 * price2;
+      document.getElementById("subtotal").textContent = `₹${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

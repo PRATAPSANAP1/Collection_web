@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Shubhangi Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            Shubhangi<span>Collection</span>
+        </a>
+
+           <div class="nav-menu1">
+      <div id="toggle-Link" class="toggle-Link" onclick="togglelink()">☰</div>
+<nav id="nav-menu" class="nav-menu">
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="booking.html">Beauty Parlour</a></li>
+    <li><a href="order.html">Orders</a></li>
+    <li><a href="contact.html">Contact</a></li>
+   </ul>
+</nav>
+</div>
+
+        <div class="header-right">
+        
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon wishlist-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="icon cart-icon"><i class="fas fa-shopping-bag"></i></a>
+                <a href="delivery.html" class="icon cart-icon"><i class="fas fa-truck"></i></a>
+                <a href="profile.html" class="icon user-icon"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+    <div class="overlay main-overlay" id="mainOverlay"></div>
+
+    <main class="container">
+        <div class="customer-orders-wrapper">
+            <h2 class="section-title" id="section-title">My Orders</h2>
+
+            <div class="order-cards-container">
+                <div class="order-card">
+                    <div class="product-image">
+                        <img src="images/anklets.jpg" alt="Product 1 Image">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-name">Anklets</h4>
+                        <div class="card-header">
+                            <span class="order-id">Order ID: #ORD789</span>
+                            <span class="order-date">Date: 20/07/2025</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="order-info">
+                                <p><strong>Total:</strong> <span class="order-total">₹120.50</span></p>
+                                <p><strong>Status:</strong> <span class="order-status-badge completed">Completed</span></p>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-primary btn-sm order-cancel-button">Cancel Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-card">
+                    <div class="product-image">
+                        <img src="images/jewelry-sets.jpg" alt="Product 2 Image">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-name">jewelry-sets</h4>
+                        <div class="card-header">
+                            <span class="order-id">Order ID: #ORD788</span>
+                            <span class="order-date">Date: 15/07/2025</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="order-info">
+                                <p><strong>Total:</strong> <span class="order-total">₹45.00</span></p>
+                                <p><strong>Status:</strong> <span class="order-status-badge shipped">Shipped</span></p>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-primary btn-sm order-cancel-button">Cancel Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-card">
+                    <div class="product-image">
+                        <img src="images/bangles.jpg" alt="Product 3 Image">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-name">Bangles</h4>
+                        <div class="card-header">
+                            <span class="order-id">Order ID: #ORD787</span>
+                            <span class="order-date">Date: 10/07/2025</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="order-info">
+                                <p><strong>Total:</strong> <span class="order-total">₹75.99</span></p>
+                                <p><strong>Status:</strong> <span class="order-status-badge pending">Pending</span></p>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-primary btn-sm order-cancel-button">Cancel Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-card">
+                    <div class="product-image">
+                        <img src="images/product-1.jpg" alt="Product 4 Image">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-name">Watch</h4>
+                        <div class="card-header">
+                            <span class="order-id">Order ID: #ORD786</span>
+                            <span class="order-date">Date: 05:07:2025</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="order-info">
+                                <p><strong>Total:</strong> <span class="order-total">₹200.00</span></p>
+                                <p><strong>Status:</strong> <span class="order-status-badge cancelled">Cancelled</span></p>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-primary btn-sm order-cancel-button">Cancel Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainNavToggle = document.getElementById('mainNavToggle');
+            const navMenu = document.getElementById('navMenu');
+            const mainOverlay = document.getElementById('mainOverlay');
+            const searchIcon = document.getElementById('searchIcon');
+            const searchBar = document.getElementById('searchBar');
+            const megaMenuLinks = document.querySelectorAll('.mega-menu-link > a');
+
+            function closeAllMenus() {
+                navMenu.classList.remove('active');
+                mainOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                searchBar.classList.remove('active');
+                searchIcon.classList.remove('active');
+                document.querySelectorAll('.mega-menu-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+            }
+
+            if (mainNavToggle) {
+                mainNavToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    mainOverlay.classList.toggle('active');
+                    document.body.classList.toggle('no-scroll');
+                    searchBar.classList.remove('active');
+                    searchIcon.classList.remove('active');
+                });
+            }
+
+            if (mainOverlay) {
+                mainOverlay.addEventListener('click', closeAllMenus);
+            }
+
+            if (searchIcon) {
+                searchIcon.addEventListener('click', function() {
+                    searchBar.classList.toggle('active');
+                    this.classList.toggle('active');
+                    navMenu.classList.remove('active');
+                    mainOverlay.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                });
+            }
+
+            megaMenuLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    if (window.innerWidth <= 1030) {
+                        event.preventDefault();
+                        const parentLi = this.closest('.mega-menu-link');
+                        parentLi.classList.toggle('active');
+
+                        document.querySelectorAll('.mega-menu-link').forEach(otherLink => {
+                            if (otherLink !== parentLi) {
+                                otherLink.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('.mega-menu-link').forEach(link => {
+                link.addEventListener('mouseleave', function() {
+                    if (window.innerWidth > 1030) {
+                        this.classList.remove('active');
+                    }
+                });
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 1030) {
+                    closeAllMenus();
+                    document.querySelectorAll('.mega-menu').forEach(menu => {
+                        menu.style.display = '';
+                    });
+                    document.querySelectorAll('.mega-menu-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                }
+            });
+
+            function attachOrderButtonListeners(card) {
+                const cancelButton = card.querySelector('.order-cancel-button');
+
+                if (cancelButton) {
+                    cancelButton.addEventListener('click', function() {
+                        const orderId = this.closest('.order-card').querySelector('.order-id').textContent.replace('Order ID: ', '');
+                        if (confirm(`Are you sure you want to cancel Order ID: ${orderId}?`)) {
+                            const statusCell = this.closest('.order-card').querySelector('.order-status-badge');
+                            statusCell.textContent = 'Cancelled';
+                            statusCell.className = 'order-status-badge cancelled';
+                            alert(`Order ID: ${orderId} has been cancelled.`);
+                            console.log(`Order ID: ${orderId} cancelled.`);
+                        }
+                    });
+                }
+            }
+
+            document.querySelectorAll('.order-card').forEach(card => {
+                attachOrderButtonListeners(card);
+            });
+        });
+        
+        function togglelink() {
+            const nav = document.getElementById("nav-menu");
+            const toggleBtn = document.getElementById("toggle-Link");
+
+            nav.classList.toggle("show1");
+            document.body.classList.toggle("no-scroll");
+
+            if (toggleBtn) {
+                toggleBtn.classList.toggle("active");
+
+                if (toggleBtn.classList.contains("active")) {
+                    toggleBtn.innerHTML = "&#10005;";
+                } else {
+                    toggleBtn.innerHTML = "&#9776;";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

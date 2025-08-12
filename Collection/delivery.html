@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Status - Shubhangi Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="delivery.css">
+</head>
+<body>
+
+    <!-- ======================= HEADER SECTION ======================= -->
+    <header class="header">
+        <a href="index.html" class="logo">
+            Shubhangi<span>Collection</span>
+        </a>
+
+        <div class="nav-menu1">
+            <div id="toggle-Link" class="toggle-Link" onclick="togglelink()">&#9776;</div>
+            <nav id="nav-menu" class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="booking.html">Beauty Parlour</a></li>
+                    <li><a href="order.html">Orders</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon wishlist-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="icon cart-icon"><i class="fas fa-shopping-bag"></i></a>
+                <a href="delivery.html" class="active"><i class="fas fa-truck"></i></a>
+                <a href="profile.html" class="icon user-icon"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+    <div class="overlay main-overlay" id="mainOverlay"></div>
+    <!-- ======================= END HEADER SECTION ======================= -->
+
+    <main class="container">
+        <div class="delivery-status-wrapper">
+            <h2 class="section-title">Track Your Deliveries</h2>
+
+            <div class="delivery-cards-container">
+                <!-- Delivery Card 1: Out for Delivery -->
+                <div class="delivery-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/100x100/A8D8EA/36454F?text=Anklets" alt="Anklets">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-name">Anklets</h4>
+                        <div class="card-header">
+                            <span class="order-id">Order ID: #ORD789</span>
+                            <span class="order-date">Date: 20/07/2025</span>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Estimated Delivery:</strong> <span class="estimated-date">28/07/2025</span></p>
+                            <div class="delivery-status-bar out-for-delivery">
+                                <div class="status-step confirmed"><span>Confirmed</span></div>
+                                <div class="status-step shipped"><span>Shipped</span></div>
+                                <div class="status-step out-for-delivery"><span>Out for Delivery</span></div>
+                                <div class="status-step delivered"><span>Delivered</span></div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-primary btn-sm track-button">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Card 2: Shipped -->
+                <div class="delivery-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/100x100/F08080/36454F?text=Jewelry+Sets" alt="Jewelry Sets">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-name">Jewelry Sets</h4>
+                        <div class="card-header">
+                            <span class="order-id">Order ID: #ORD788</span>
+                            <span class="order-date">Date: 15/07/2025</span>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Estimated Delivery:</strong> <span class="estimated-date">25/07/2025</span></p>
+                            <div class="delivery-status-bar shipped">
+                                <div class="status-step confirmed"><span>Confirmed</span></div>
+                                <div class="status-step shipped"><span>Shipped</span></div>
+                                <div class="status-step out-for-delivery"><span>Out for Delivery</span></div>
+                                <div class="status-step delivered"><span>Delivered</span></div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-primary btn-sm track-button">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Card 3: Delivered -->
+                <div class="delivery-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/100x100/F8D49B/36454F?text=Bangles" alt="Bangles">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-name">Bangles</h4>
+                        <div class="card-header">
+                            <span class="order-id">Order ID: #ORD787</span>
+                            <span class="order-date">Date: 10/07/2025</span>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Delivered On:</strong> <span class="estimated-date">18/07/2025</span></p>
+                            <div class="delivery-status-bar delivered">
+                                <div class="status-step confirmed"><span>Confirmed</span></div>
+                                <div class="status-step shipped"><span>Shipped</span></div>
+                                <div class="status-step out-for-delivery"><span>Out for Delivery</span></div>
+                                <div class="status-step delivered"><span>Delivered</span></div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-secondary btn-sm track-button">Leave a Review</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Card 4: Confirmed -->
+                <div class="delivery-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/100x100/98FF98/36454F?text=Watch" alt="Watch">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-name">Watch</h4>
+                        <div class="card-header">
+                            <span class="order-id">Order ID: #ORD786</span>
+                            <span class="order-date">Date: 05/07/2025</span>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Estimated Delivery:</strong> <span class="estimated-date">10/07/2025</span></p>
+                            <div class="delivery-status-bar confirmed">
+                                <div class="status-step confirmed"><span>Confirmed</span></div>
+                                <div class="status-step shipped"><span>Shipped</span></div>
+                                <div class="status-step out-for-delivery"><span>Out for Delivery</span></div>
+                                <div class="status-step delivered"><span>Delivered</span></div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-primary btn-sm track-button">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- ======================= CUSTOM MODAL ======================= -->
+    <div id="custom-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+    <!-- ======================= END CUSTOM MODAL ======================= -->
+
+    <!-- ======================= JAVASCRIPT ======================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ======================= NAVIGATION TOGGLE =======================
+            const navMenu = document.getElementById('nav-menu');
+            const toggleBtn = document.getElementById('toggle-Link');
+            const mainOverlay = document.getElementById('mainOverlay');
+            
+            function togglelink() {
+                navMenu.classList.toggle("show1");
+                document.body.classList.toggle("no-scroll");
+                mainOverlay.classList.toggle("active");
+
+                if (toggleBtn) {
+                    toggleBtn.classList.toggle("active");
+                    if (toggleBtn.classList.contains("active")) {
+                        toggleBtn.innerHTML = "&#10005;";
+                    } else {
+                        toggleBtn.innerHTML = "&#9776;";
+                    }
+                }
+            }
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', togglelink);
+            }
+            if (mainOverlay) {
+                mainOverlay.addEventListener('click', togglelink);
+            }
+
+            // ======================= CUSTOM MODAL LOGIC =======================
+            const modal = document.getElementById('custom-modal');
+            const closeButton = document.querySelector('.close-button');
+            const modalMessage = document.getElementById('modal-message');
+
+            function showModal(message) {
+                modalMessage.textContent = message;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+
+            if (closeButton) {
+                closeButton.addEventListener('click', closeModal);
+            }
+
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // ======================= BUTTON LISTENERS =======================
+            document.querySelectorAll('.track-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const orderId = this.closest('.delivery-card').querySelector('.order-id').textContent;
+                    const statusText = this.closest('.delivery-card').querySelector('.delivery-status-bar').className.split(' ').pop().replace(/-/g, ' ');
+                    showModal(`Order ${orderId} is currently "${statusText}".`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
